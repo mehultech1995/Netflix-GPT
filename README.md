@@ -16,7 +16,18 @@
 - Updated Profile
 - Fetch Movies from TMDB
 - BugFix: Sign Up user displayName and profile picture update
--  BugFix: If the user is not logged in Redirect /browse to login Page and vice-versa
+- BugFix: If the user is not logged in Redirect /browse to login Page and vice-versa
+- Unsubscribed to the onAuthStateChanged callback
+- Add hardcoded values to the constants file
+- Register TMDB now playing movies list API
+- Custom Hook for Now Playing Movies
+- Create MovieSlice
+- Update Store with movies Data
+- Planning for MainContainer & SecondaryContainer
+- Fetch Data for trailer video
+- Update store with Trailer video Data
+- Embeded the youtube video and make it autoplay and mute
+- Tailwind classes to make mainContainer look awesome
 
 # Features
 - Login/Sign Up

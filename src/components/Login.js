@@ -7,6 +7,7 @@ import { auth } from '../utils/firebase';
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { AVATAR_LOGO, LOGO } from '../utils/constants';
 
 
 
@@ -47,7 +48,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/114760517?v=4",
+            photoURL: AVATAR_LOGO,
           }).then(() => {
             // Profile updated
 
@@ -76,7 +77,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log(user)
+         // console.log(user)
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -94,7 +95,7 @@ const Login = () => {
       <div>
         <img
           className='absolute'
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/f85718e8-fc6d-4954-bca0-f5eaf78e0842/ea44b42b-ba19-4f35-ad27-45090e34a897/IN-en-20230918-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={LOGO}
           alt="Logo" />
       </div>
 
