@@ -20,6 +20,7 @@
 - Unsubscribed to the onAuthStateChanged callback
 - Add hardcoded values to the constants file
 - Register TMDB now playing movies list API
+- Get data from TMDB API
 - Custom Hook for Now Playing Movies
 - Create MovieSlice
 - Update Store with movies Data
@@ -28,6 +29,7 @@
 - Update store with Trailer video Data
 - Embeded the youtube video and make it autoplay and mute
 - Tailwind classes to make mainContainer look awesome
+- Build secondaryContainer
 
 # Features
 - Login/Sign Up
@@ -43,7 +45,6 @@
 - NetflixGPT
     - Search Bar
     - Movie Suggestions
-
 
 
 # Project Setup
