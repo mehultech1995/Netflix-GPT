@@ -2,6 +2,8 @@ import React from 'react'
 import { IMG_CDN_URL } from '../utils/constants'
 
 const Moviecard = ({ posterPath }) => {
+   
+   if(!posterPath) return null;
     return (
         <div
             className='w-36 md:w-36 pr-4'
@@ -11,4 +13,4 @@ const Moviecard = ({ posterPath }) => {
     )
 }
 
-export default Moviecard;
+export default Moviecard; 

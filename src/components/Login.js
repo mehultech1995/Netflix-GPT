@@ -7,7 +7,7 @@ import { auth } from '../utils/firebase';
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { AVATAR_LOGO, LOGO } from '../utils/constants';
+import { AVATAR_LOGO, BG_URL } from '../utils/constants';
 
 
 
@@ -55,11 +55,11 @@ const Login = () => {
             const { uid, email, displayName, photoURL } = auth.currentUser;
             dispatch(
               addUser({
-              uid: uid,
-              email: email,
-              displayName: displayName,
-              photoURL: photoURL,
-            }))
+                uid: uid,
+                email: email,
+                displayName: displayName,
+                photoURL: photoURL,
+              }))
           }).catch((error) => {
             // An error occurred
             setErrorMessage(error.message)
@@ -77,7 +77,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-         // console.log(user)
+          // console.log(user)
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -92,48 +92,51 @@ const Login = () => {
     <div>
       <Header />
 
-      <div>
+      <div className='absolute'>
         <img
-          className='absolute'
-          src={LOGO}
+          className='h-screen object-cover md:h-auto '
+          src={BG_URL}
           alt="Logo" />
       </div>
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className='absolute text-white p-10 bg-black w-1/3 my-36 mx-auto right-0 left-0 bg-opacity-80 rounded-md' >
+        className='w-full md:w-[30%] absolute p-12 bg-black my-20 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80' >
 
-        <h1 className='font-semibold text-3xl py-4 '>
+        <h1 className='font-bold text-3xl py-0 '>
           {isSignInForm ? "Sign In" : "Sign Up"} </h1>
 
         {!isSignInForm &&
           <input
             ref={name}
-            className='p-3 my-4 w-full bg-gray-800 rounded-md '
             type="text"
-            placeholder='User name' />}
+            placeholder='User name'
+            className='p-3 my-4 w-full bg-gray-800 rounded-md'
+          />}
 
         <input
           ref={email}
-          className='p-3 my-4 w-full bg-gray-800 rounded-md '
           type="text"
-          placeholder='Email or phone number' />
+          placeholder='Email or phone number'
+          className='p-3 my-4 w-full bg-gray-800 rounded-md'
+        />
 
         <input
           ref={password}
-          className='p-3 my-4 w-full bg-gray-800 rounded-md '
           type="password"
-          placeholder='Password' />
+          placeholder='Password'
+          className='p-3 my-4 w-full bg-gray-800 rounded-md'
+        />
 
-        <p className='text-red-600 font-semibold'>{errorMessage}</p>
+        <p className='text-red-600 font-semibold text-sm py-0'>{errorMessage}</p>
 
         <button
           onClick={handleButtonClick}
-          className='p-3 mt-10 bg-red-600 w-full rounded-md ' >
+          className='p-4 my-4 bg-red-700 w-full rounded-lg' >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
 
-        <div className=' mt-2 mb-12 '>
+        <div className=' mt-0 mb-4 '>
           <input type="checkbox" id="myCheckbox" />
           <label className='text-gray-500 '
             htmlFor="myCheckbox"> Remember me</label>
